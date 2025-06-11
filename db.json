@@ -1,0 +1,173 @@
+{
+  "transactions": [
+    {
+      "id": "1",
+      "userId": "user1",
+      "type": "income",
+      "amount": 50000,
+      "category": "Зарплата",
+      "date": "2025-05-01",
+      "comment": "Аванс"
+    },
+    {
+      "id": "2",
+      "userId": "user1",
+      "type": "expense",
+      "amount": 2500,
+      "category": "Продукты",
+      "date": "2025-05-03",
+      "comment": "Молоко, хлеб"
+    },
+    {
+      "id": "3",
+      "userId": "user1",
+      "type": "expense",
+      "amount": 15000,
+      "category": "Коммунальные услуги",
+      "date": "2025-05-05"
+    },
+    {
+      "id": "327d",
+      "userId": "user1",
+      "type": "expense",
+      "amount": 1500,
+      "category": "Продукты",
+      "date": "2025-05-11",
+      "comment": "вкусняшки"
+    },
+    {
+      "type": "income",
+      "amount": 50000,
+      "category": "Зарплата",
+      "date": "2025-05-02",
+      "comment": "Премия",
+      "id": "f6da"
+    },
+    {
+      "id": "b580",
+      "type": "income",
+      "amount": 100000,
+      "category": "",
+      "date": "2025-05-12",
+      "comment": "аванс",
+      "userId": "2fa9"
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat1",
+      "userId": "user1",
+      "name": "Зарплата",
+      "icon": "💰",
+      "color": "#28a745"
+    },
+    {
+      "id": "cat2",
+      "userId": "user1",
+      "name": "Продукты",
+      "icon": "🛒",
+      "color": "#ffc107"
+    },
+    {
+      "id": "cat3",
+      "userId": "user1",
+      "name": "Коммунальные услуги",
+      "icon": "🏠",
+      "color": "#17a2b8"
+    },
+    {
+      "id": "cat4",
+      "userId": "user1",
+      "name": "Транспорт",
+      "icon": "🚗",
+      "color": "#6f42c1"
+    },
+    {
+      "id": "cat5",
+      "userId": "user1",
+      "name": "Развлечения",
+      "icon": "🎉",
+      "color": "#fd7e14"
+    },
+    {
+      "id": "cat-sidc-1",
+      "userId": "1406",
+      "name": "Зарплата",
+      "icon": "💼",
+      "color": "#4CAF50"
+    },
+    {
+      "id": "cat-sidc-2",
+      "userId": "1406",
+      "name": "Еда и напитки",
+      "icon": "🍔",
+      "color": "#FFC107"
+    },
+    {
+      "id": "cat-sidc-3",
+      "userId": "1406",
+      "name": "Транспорт",
+      "icon": "🚌",
+      "color": "#2196F3"
+    },
+    {
+      "id": "cat-sidc-4",
+      "userId": "1406",
+      "name": "Жилье",
+      "icon": "🏡",
+      "color": "#F44336"
+    },
+    {
+      "id": "cat-example-1",
+      "userId": "2fa9",
+      "name": "Доход фриланс",
+      "icon": "💻",
+      "color": "#00BCD4"
+    },
+    {
+      "id": "cat-example-2",
+      "userId": "2fa9",
+      "name": "Продукты",
+      "icon": "🍎",
+      "color": "#8BC34A"
+    },
+    {
+      "id": "cat-example-3",
+      "userId": "2fa9",
+      "name": "Счета и подписки",
+      "icon": "🧾",
+      "color": "#9C27B0"
+    },
+    {
+      "id": "cat-example-4",
+      "userId": "2fa9",
+      "name": "Хобби",
+      "icon": "🎨",
+      "color": "#FF9800"
+    },
+    {
+      "id": "d73a",
+      "name": "Игры",
+      "icon": "🎮",
+      "color": "#d37373",
+      "userId": "1406"
+    }
+  ],
+  "users": [
+    {
+      "id": "user1",
+      "email": "test@example.com",
+      "password": "password123"
+    },
+    {
+      "id": "1406",
+      "email": "s_idc@mail.ru",
+      "password": "1234"
+    },
+    {
+      "id": "2fa9",
+      "email": "example@gmail.com",
+      "password": "123"
+    }
+  ]
+}

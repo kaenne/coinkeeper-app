@@ -1,0 +1,158 @@
+.statistics-page-container {
+  padding: 20px;
+  max-width: 950px; /* Немного увеличим для графиков */
+  margin: 0 auto;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+  border: 1px solid var(--border-color);
+}
+
+.statistics-page-container h1,
+.statistics-page-container h2,
+.statistics-page-container h3 {
+  color: var(--text-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+.statistics-page-container h1 {
+  font-size: 2em;
+}
+.statistics-page-container h2 {
+  font-size: 1.6em;
+  margin-top: 30px;
+}
+.statistics-page-container h3 {
+  font-size: 1.3em;
+  margin-top: 25px;
+  text-align: left; /* Детализация по левому краю */
+}
+
+.period-filter-container {
+  margin-bottom: 30px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap; /* Для переноса на маленьких экранах */
+  justify-content: center; /* Центрируем фильтры */
+  padding: 15px;
+  background-color: var(--secondary-color);
+  border-radius: 6px;
+}
+
+.period-filter-container label {
+  font-weight: 500;
+  color: var(--text-color-light);
+}
+
+.period-filter-container select {
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-width: 200px; /* Минимальная ширина для селектов */
+}
+.period-filter-container select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(106, 90, 249, 0.25);
+}
+
+.totals-summary-container {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  gap: 20px; /* Пространство между блоками дохода/расхода */
+  flex-wrap: wrap; /* Для адаптивности */
+}
+
+.totals-summary-container div h2 {
+  font-size: 1.2em;
+  color: var(--text-color-light);
+  margin-bottom: 8px;
+}
+.totals-summary-container div p {
+  font-size: 1.8em;
+  font-weight: 600;
+  margin: 0;
+}
+.totals-summary-container div p.income-total { color: var(--success-color); }
+.totals-summary-container div p.expense-total { color: var(--danger-color); }
+
+.chart-container {
+  width: 100%;
+  height: 400px; /* Фиксированная высота для графиков */
+  margin-bottom: 40px;
+}
+
+.no-data-message {
+  text-align: center;
+  padding: 30px;
+  color: var(--text-color-light);
+  font-style: italic;
+}
+
+.expense-details-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.expense-details-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--secondary-color); /* Более светлая граница */
+}
+.expense-details-list li:last-child {
+  border-bottom: none;
+}
+
+.expense-details-list .category-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.expense-details-list .category-icon {
+  font-size: 1.3em;
+  width: 25px;
+  text-align: center;
+}
+.expense-details-list .category-amount {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+/* Адаптивность для страницы статистики */
+@media (max-width: 768px) {
+  .statistics-page-container {
+    padding: 15px;
+  }
+  .period-filter-container {
+    flex-direction: column;
+    align-items: stretch; /* Растягиваем селекты */
+  }
+  .period-filter-container select {
+    min-width: 0; /* Убираем мин. ширину на мобильных */
+    width: 100%;
+  }
+  .totals-summary-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .chart-container {
+    height: 300px; /* Уменьшаем высоту графиков на мобильных */
+  }
+}
+
+@media (max-width: 480px) {
+  .statistics-page-container h1 { font-size: 1.8em; }
+  .statistics-page-container h2 { font-size: 1.4em; }
+  .statistics-page-container h3 { font-size: 1.2em; }
+
+  .totals-summary-container div p { font-size: 1.5em; }
+}

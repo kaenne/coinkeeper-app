@@ -1,0 +1,75 @@
+/* src/components/Button/Button.css */
+.btn {
+  padding: 10px 20px;
+  border: 1px solid transparent; /* Добавляем прозрачную границу для консистентности размеров */
+  border-radius: 6px; /* Синхронизируем с global.css */
+  cursor: pointer;
+  font-size: 1em; /* Синхронизируем с global.css */
+  font-weight: 500; /* Синхронизируем с global.css */
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); Убираем тень по умолчанию, добавим при hover/focus */
+  line-height: 1.5; /* Для лучшего вертикального выравнивания текста */
+}
+
+.btn:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn:focus-visible { /* Улучшенный стиль фокуса */
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(106, 90, 249, 0.2);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-color-dark);
+  border-color: var(--primary-color-dark);
+}
+
+.btn-secondary {
+  background-color: #6c757d; /* Bootstrap secondary */
+  color: white;
+  border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+/* Добавим стиль для "outline" варианта кнопки, если понадобится */
+.btn-outline-secondary {
+  background-color: transparent;
+  color: var(--text-color-light);
+  border-color: var(--border-color);
+}
+.btn-outline-secondary:hover {
+  background-color: var(--secondary-color); /* Легкий фон при наведении */
+  color: var(--text-color);
+  border-color: #adb5bd;
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  color: white;
+  border-color: var(--danger-color);
+}
+
+.btn-danger:hover {
+  background-color: #c82333; /* Затемненный danger */
+  border-color: #bd2130;
+}
+
+.btn:disabled {
+  background-color: #e9ecef; /* Более светлый серый для disabled */
+  color: #6c757d;
+  border-color: #ced4da;
+  cursor: not-allowed;
+  box-shadow: none;
+}

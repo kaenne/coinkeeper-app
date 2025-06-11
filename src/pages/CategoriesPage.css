@@ -1,0 +1,166 @@
+.categories-page-container {
+  padding: 20px;
+  max-width: 800px; /* Увеличим немного для лучшего вида на десктопе */
+  margin: 0 auto;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+  border: 1px solid var(--border-color);
+}
+
+.categories-page-container h1,
+.categories-page-container h2 {
+  color: var(--text-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+.categories-page-container h1 {
+  font-size: 2em;
+}
+.categories-page-container h2 {
+  font-size: 1.6em;
+  margin-top: 30px; /* Отступ перед заголовком формы */
+}
+
+
+/* Стили для формы категорий */
+.category-form {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  background-color: var(--secondary-color); /* Легкий фон для формы */
+  border-radius: 6px;
+}
+
+.category-form-inputs {
+  display: flex;
+  gap: 15px;
+  align-items: center; /* Выравниваем инпуты по центру */
+}
+
+.category-form input[type="text"],
+.category-form input[type="color"] {
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1em;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.category-form input[type="text"]:focus,
+.category-form input[type="color"]:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(106, 90, 249, 0.25);
+}
+
+.category-form input[placeholder="Название категории"] {
+  flex-grow: 1;
+}
+.category-form input[placeholder="Иконка (Emoji)"] {
+  width: 130px; /* Фиксированная ширина для иконки */
+}
+.category-form input[type="color"] {
+  padding: 5px; /* Уменьшим паддинг для color input */
+  height: 42px; /* Выровняем по высоте с текстовыми инпутами */
+  min-width: 50px; /* Минимальная ширина */
+  cursor: pointer;
+}
+
+.category-form .btn { /* Кнопка в форме */
+  align-self: flex-start;
+}
+
+/* Стили для списка категорий */
+.categories-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s ease-in-out;
+}
+.category-list-item:last-child {
+  border-bottom: none;
+}
+.category-list-item:hover {
+  background-color: var(--secondary-color);
+}
+
+.category-item-details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.category-item-icon {
+  font-size: 1.6em; /* Увеличим иконку */
+  width: 30px;
+  text-align: center;
+}
+
+.category-item-name {
+  font-size: 1.05em;
+  font-weight: 500;
+  /* border-left и padding-left убраны, цвет будет через фон или иконку */
+}
+
+.category-item-actions .btn {
+  margin-left: 10px;
+  padding: 6px 12px; /* Уменьшим кнопки */
+  font-size: 0.9em;
+}
+
+.loading-message, .error-message, .no-categories-message {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-color-light);
+}
+.error-message {
+  color: var(--danger-color);
+}
+
+/* Адаптивность для страницы категорий */
+@media (max-width: 768px) {
+  .categories-page-container {
+    padding: 15px;
+  }
+  .category-form-inputs {
+    flex-direction: column;
+    align-items: stretch; /* Растягиваем инпуты на всю ширину */
+  }
+  .category-form input[placeholder="Иконка (Emoji)"],
+  .category-form input[type="color"] {
+    width: 100%; /* Инпуты на всю ширину */
+  }
+  .category-form .btn {
+    align-self: stretch; /* Кнопка на всю ширину */
+  }
+}
+
+@media (max-width: 480px) {
+  .category-list-item {
+    flex-direction: column;
+    align-items: flex-start; /* Выравнивание по левому краю */
+    gap: 10px;
+  }
+  .category-item-actions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* Кнопки вправо */
+  }
+  .category-item-actions .btn {
+    margin-left: 0;
+    margin-right: 10px; /* Отступ между кнопками */
+  }
+  .category-item-actions .btn:last-child {
+    margin-right: 0;
+  }
+}

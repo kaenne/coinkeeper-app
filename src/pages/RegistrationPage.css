@@ -1,0 +1,121 @@
+.registration-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 120px); 
+  padding: 20px;
+  background-color: var(--secondary-color); /* Используем переменную */
+  position: relative; /* Для позиционирования кнопки темы */
+}
+
+.registration-form-container {
+  background-color: var(--background-color); /* Используем переменную */
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.registration-form-container h1 {
+  font-size: 2em;
+  color: var(--text-color); /* Используем переменную */
+  margin-bottom: 25px;
+}
+
+.registration-form-container .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.registration-form-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text-color-light); /* Используем переменную */
+}
+
+.registration-form-container input[type="email"],
+.registration-form-container input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--border-color); /* Используем переменную */
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 1em;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  background-color: var(--background-color); 
+  color: var(--text-color); 
+}
+
+.registration-form-container input[type="email"]:focus,
+.registration-form-container input[type="password"]:focus {
+  border-color: var(--primary-color); /* Используем переменную */
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(106, 90, 249, 0.25); 
+}
+
+.registration-form-container .btn-register { 
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 1.1em;
+  margin-top: 10px;
+}
+
+.registration-form-container .error-message {
+  color: var(--danger-color); 
+  background-color: color-mix(in srgb, var(--danger-color) 15%, transparent); /* Используем переменную для фона */
+  border: 1px solid var(--danger-color); /* Используем переменную для границы */
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 0.9em;
+}
+
+.registration-form-container .loading-text {
+  font-style: italic;
+  color: var(--text-color-light); /* Используем переменную */
+}
+
+.registration-page-container .login-link-container { 
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: var(--text-color-light);
+}
+
+.registration-page-container .login-link { 
+  color: var(--primary-color); /* Используем переменную */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.registration-page-container .login-link:hover {
+  text-decoration: underline;
+}
+
+.page-theme-toggle-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  z-index: 10;
+}
+
+.page-theme-toggle-button:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--primary-color);
+}

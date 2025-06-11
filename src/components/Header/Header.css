@@ -1,0 +1,232 @@
+.app-header {
+  background-color: var(--background-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0; 
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Распределяем элементы по краям */
+  padding: 0 20px; /* Добавляем горизонтальные отступы */
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 60px; 
+  /* gap убираем, т.к. space-between будет управлять основным пространством */
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--primary-color);
+  flex-shrink: 0; /* Чтобы логотип не сжимался */
+}
+
+.logo-image {
+  height: 35px; /* Размер логотипа */
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--text-color); /* Цвет текста логотипа */
+}
+
+/* Стили для навигации на десктопе */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Отступы между ссылками и блоком user-info */
+}
+
+.desktop-nav .nav-link {
+  text-decoration: none;
+  color: var(--text-color-light);
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-weight: 500;
+}
+
+.desktop-nav .nav-link:hover {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+
+.desktop-nav .nav-link.active-link {
+  color: var(--primary-color);
+  font-weight: bold;
+  background-color: var(--secondary-color); /* Фон для активной ссылки */
+}
+
+.desktop-nav .user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Отступы между элементами внутри user-info */
+  margin-left: 20px; /* Отступ блока user-info от навигационных ссылок */
+}
+
+.user-email {
+  font-size: 0.9em;
+  color: var(--text-color-light);
+}
+
+.nav-button { /* Общий класс для кнопок в навигации, включая кнопку темы */
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-button:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--primary-color);
+}
+
+.nav-button.logout-button {
+  background-color: var(--danger-color);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.nav-button.logout-button:hover {
+  background-color: #c82333; /* Более темный оттенок при наведении */
+}
+
+.theme-toggle-button {
+  font-size: 1.2em; /* Для emoji */
+  padding: 6px 10px; /* Немного меньше паддинг для иконки */
+  line-height: 1;
+}
+
+/* Кнопка бургер-меню и мобильное меню */
+.mobile-menu-toggle {
+  display: none; /* Скрыто по умолчанию, будет показано через медиа-запрос */
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1.8em;
+  cursor: pointer;
+  padding: 5px 10px;
+  line-height: 1;
+  color: var(--text-color);
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999; /* Ниже чем .mobile-nav */
+  display: flex; /* Для выравнивания .mobile-nav */
+  justify-content: flex-end; /* Появляется справа */
+}
+
+.mobile-nav {
+  background-color: var(--background-color);
+  width: 280px; /* Ширина мобильного меню */
+  height: 100%;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Уменьшим немного gap */
+  z-index: 1000;
+  animation: slideInFromRight 0.3s ease-out;
+}
+
+@keyframes slideInFromRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.mobile-nav .nav-link {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: var(--text-color);
+  border-radius: 4px;
+  font-size: 1.1em;
+}
+.mobile-nav .nav-link:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+.mobile-nav .nav-link.active-link {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+.mobile-user-email {
+  padding: 10px 15px;
+  font-size: 1em;
+  color: var(--text-color-light);
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 10px;
+}
+
+.mobile-theme-toggle-button {
+  width: 100%;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: var(--text-color); /* Добавим цвет текста */
+  background-color: transparent; /* Убедимся, что фон прозрачный */
+  border: none; /* Убираем стандартную границу кнопки */
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+  cursor: pointer;
+  font-size: 1.1em; /* Добавим размер шрифта для консистентности */
+}
+
+.mobile-theme-toggle-button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.mobile-logout-button {
+  width: 100%; /* Кнопка выхода на всю ширину в мобильном меню */
+  margin-top: auto; /* Прижимает кнопку выхода вниз */
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: var(--danger-color); /* Цвет опасности */
+  border-radius: 4px;
+  font-size: 1.1em;
+  background-color: transparent;
+  border: none; 
+  text-align: left;
+  cursor: pointer;
+}
+
+.mobile-logout-button:hover {
+  background-color: color-mix(in srgb, var(--danger-color) 15%, transparent); /* Светло-красный фон при наведении */
+  color: var(--danger-color); /* Убедимся, что цвет текста остается */
+}
+
+/* Адаптивность для маленьких экранов */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none; 
+  }
+  .mobile-menu-toggle {
+    display: block; 
+    /* margin-left: auto; не нужен, если header-content имеет space-between */
+  }
+}

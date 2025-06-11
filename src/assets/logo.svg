@@ -1,0 +1,5 @@
+<!-- filepath: c:\Users\77077\coinkeeper-app\src\assets\logo.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="50" height="50">
+  <rect width="100" height="100" fill="#6a5af9"/>
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" fill="white" font-weight="bold">CK</text>
+</svg>

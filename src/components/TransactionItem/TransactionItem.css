@@ -1,0 +1,117 @@
+/* src/components/TransactionItem/TransactionItem.css */
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  /* border-bottom убран, т.к. gap в .transactions-list */
+  background-color: var(--background-color); /* Используем переменную */
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.06); /* Мягкая тень */
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+  border-left: 4px solid transparent; /* Для цвета категории */
+}
+
+.transaction-item:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.transaction-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.transaction-details {
+  display: flex;
+  align-items: center; /* Выравниваем по центру для лучшего вида с иконкой */
+  gap: 12px; 
+  flex-grow: 1;
+  flex-wrap: wrap; /* Позволяем перенос элементов, если не влезают */
+}
+
+.category-icon-wrapper { /* Новый класс для иконки категории */
+  font-size: 1.5em; /* Размер для emoji */
+  width: 30px; /* Фиксированная ширина для выравнивания */
+  text-align: center;
+}
+
+.transaction-info { /* Новый класс для группы текста */
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.transaction-category {
+  font-size: 1.05em;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.transaction-comment {
+  font-size: 0.85em;
+  color: var(--text-color-light);
+  font-style: italic;
+}
+
+.transaction-date {
+  font-size: 0.9em;
+  color: var(--text-color-light);
+  margin-left: auto; /* Прижимаем дату и сумму вправо, если есть место */
+  padding-left: 15px;
+  white-space: nowrap; /* Предотвращаем перенос даты */
+}
+
+.transaction-amount {
+  font-size: 1.1em;
+  font-weight: bold;
+  min-width: 100px; /* Минимальная ширина для суммы */
+  text-align: right; /* Сумма по правому краю */
+  white-space: nowrap;
+}
+
+.amount-income {
+  color: var(--success-color); 
+}
+
+.amount-expense {
+  color: var(--danger-color); 
+}
+
+.transaction-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding-left: 15px; /* Отступ от суммы/даты */
+}
+
+.transaction-actions .btn-edit,
+.transaction-actions .btn-delete {
+  padding: 5px 10px; 
+  font-size: 0.85em;
+}
+
+/* Убираем transaction-type, т.к. цвет и иконка категории теперь основное */
+/* .transaction-type { ... } */
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .transaction-details {
+    flex-direction: column;
+    align-items: flex-start; /* Выравнивание по левому краю на мобильных */
+    gap: 5px;
+  }
+  .transaction-date, .transaction-amount {
+    margin-left: 0;
+    padding-left: 0;
+    text-align: left; /* Сумма и дата по левому краю */
+    width: 100%; /* Занимают всю ширину */
+  }
+   .transaction-actions {
+    padding-left: 0;
+    margin-top: 10px;
+    width: 100%;
+    justify-content: flex-end; /* Кнопки вправо */
+  }
+}
